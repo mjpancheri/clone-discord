@@ -19,15 +19,36 @@ const UserRow: React.FC<UserProps> = ({ nickname, isBot }) => {
 }
 
 const UserList: React.FC = () => {
+  const users = [
+    "Huguinho",
+    "Luisinho",
+    "Pedrinho",
+    "Fulaninho",
+    "Chatinho",
+    "Incovenientinho",
+    "Zangadinho",
+    "Lindinha",
+    "Sabe Tudo",
+    "Capitão América",
+    "Superman",
+    "Batman",
+    "Spiderman",
+    "Atrasadinho",
+  ];
   return (
     <Container>
       <Role>Disponível - 1</Role>
       <UserRow nickname="Marcio Pancheri" />
+      <UserRow nickname="Assistente Virtual" isBot />
 
       <Role>Offline - 15</Role>
-      <UserRow nickname="Assistente Virtual" isBot />
-      <UserRow nickname="Huguinho" />
-      <UserRow nickname="Luisinho" />
+      {
+        users.map((u) => (
+          <UserRow key={Math.random()} nickname={u} />
+        ))
+      }
+      
+      {/* <UserRow nickname="Luisinho" />
       <UserRow nickname="Pedrinho" />
       <UserRow nickname="Fulaninho" />
       <UserRow nickname="Chatinho" />
@@ -39,7 +60,7 @@ const UserList: React.FC = () => {
       <UserRow nickname="Superman" />
       <UserRow nickname="Batman" />
       <UserRow nickname="Spiderman" />
-      <UserRow nickname="Atrasadinho" />
+      <UserRow nickname="Atrasadinho" /> */}
     </Container>
   );
 }

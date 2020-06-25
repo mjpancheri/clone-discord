@@ -4,6 +4,23 @@ import { Container , Messages, InputWrapper, Input, InputIcon} from './styles';
 import ChannelMessage, { Mention } from '../ChannelMessage';
 
 const ChannelData: React.FC = () => {
+  const users = [
+    "Huguinho",
+    "Luisinho",
+    "Pedrinho",
+    "Fulaninho",
+    "Chatinho",
+    "Incovenientinho",
+    "Zangadinho",
+    "Lindinha",
+    "Sabe Tudo",
+    "Capitão América",
+    "Superman",
+    "Batman",
+    "Spiderman",
+    "Atrasadinho",
+  ];
+
   const messageRef = useRef() as React.MutableRefObject<HTMLDivElement>;
 
   useEffect(() => {
@@ -20,9 +37,9 @@ const ChannelData: React.FC = () => {
         {Array.from(Array(15).keys()).map((n) => (
           <ChannelMessage 
             key={n}
-            author="Marcio Pancheri"
+            author={users[n]}
             date={`${n}/06/2020`}
-            content={`Teste de mensagem ${n}...`}
+            content={`Teste de mensagem ${n+1}...`}
         />
         ))}
         <ChannelMessage 
